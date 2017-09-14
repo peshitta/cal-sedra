@@ -11,16 +11,20 @@
 Convert from CAL code to Sedra 3 ASCII transliteration
 
 ## Installation
-
+In order to use this library, [Node.js](https://nodejs.org) should be installed. 
+Then run:
 ```
 npm install cal-sedra --save
 ```
 
-Following packages are available:
+Following bundles are available:
 * `cal-sedra.js` - UMD ES5 version for use in browser, node, etc.
 * `cal-sedra.min.js` - minified version of `cal-sedra.js`
 * `cal-sedra.esm.js` - ES6 module version, suitable for bundling with other 
 libraries and applications
+
+The package could also be downloaded directly from:
+[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.1.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.1.tgz)
 
 ## More information
 
@@ -41,7 +45,7 @@ For Sedra 3 to CAL conversion see:
 
 The final goal for this work is to learn the Word of God as recorded by
 [Peshitta](https://en.wikipedia.org/wiki/Peshitta).
-You are welcomed to to improve this implementation or provide feeback. Please
+You are welcomed to to improve this implementation or provide feedback. Please
 feel free to [Fork](https://help.github.com/articles/fork-a-repo/), create a
 [Pull Request](https://help.github.com/articles/about-pull-requests/) or
 submit [Issues](https://github.com/peshitta/cal-sedra/issues).

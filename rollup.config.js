@@ -8,7 +8,7 @@ const isProduction = process.env.BUILD === 'production';
 const banner = isProduction
   ? '/**\n' +
     '* @file Convert from CAL code to Sedra 3 ASCII transliteration\n' +
-    '* @version 1.0.0\n' +
+    '* @version 1.0.1\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -40,7 +40,12 @@ const external = Object.keys(pkg.dependencies);
 const input = 'src/main.js';
 const name = 'calSedra';
 const format = 'umd';
-const sourcemap = isProduction ? false : 'inline';
+const globals = {
+  'sedra-code-util': 'sedraCodeUtil',
+  'cal-code-util': 'calCodeUtil',
+  'aramaic-mapper': 'aramaicMapper'
+};
+const sourcemap = !isProduction && 'inline';
 const plugins = [babel(babelrc({ path: 'babelrc.json' }))];
 
 // browser-friendly UMD build
@@ -51,6 +56,7 @@ const targets = [
     external,
     plugins: plugins.slice(0),
     name,
+    globals,
     banner,
     sourcemap
   }
@@ -84,6 +90,7 @@ if (isProduction) {
     external,
     plugins,
     name,
+    globals,
     banner
   });
 } else {
