@@ -1,5 +1,5 @@
 /** @module cal */
-import { consonants, vowels, diacritics } from 'cal-code-util';
+import { consonants, commonVowels, diacritics } from 'cal-code-util';
 import {
   consonants as sedraConsonants,
   vowels as sedraVowels,
@@ -52,7 +52,7 @@ const mapCallback = (word, i, fromTo) => {
 const mapper = new Mapper(
   new Writing(
     consonants,
-    vowels,
+    commonVowels,
     diacritics),
   new Writing(
     sedraConsonants,
