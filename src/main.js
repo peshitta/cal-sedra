@@ -1,12 +1,35 @@
 /** @module cal */
-import { consonants, commonVowels, diacritics } from 'cal-code-util';
+import { Writing, Mapper } from 'aramaic-mapper';
+import {
+  allConsonants as consonants,
+  commonVowels,
+  diacritics
+} from 'cal-code-util';
 import {
   consonants as sedraConsonants,
   vowels as sedraVowels,
   diacritics as sedraDiacritics
 } from 'sedra-code-util';
 
-import { Writing, Mapper } from 'aramaic-mapper';
+/**
+ * @private
+ * CAL source writing
+ * @const
+ * @type { Writing }
+ */
+const calWriting = new Writing(consonants, commonVowels, diacritics);
+
+/**
+ * @private
+ * Sedra destination writing
+ * @const
+ * @type { Writing }
+ */
+const sedraWriting = new Writing(
+  Object.freeze(sedraConsonants.concat(['I', 'S'])),
+  sedraVowels,
+  sedraDiacritics
+);
 
 /**
  * @private
@@ -17,6 +40,14 @@ import { Writing, Mapper } from 'aramaic-mapper';
  */
 const map = (c, fromTo) => fromTo[c] || c;
 
+/**
+ * @private
+ * Customized mapping callback
+ * @param { string } word input word
+ * @param { number } i current index in the word
+ * @param { Object.<string, string> } fromTo mapping dictionary
+ * @returns { string } Sedra mapped char
+ */
 const mapCallback = (word, i, fromTo) => {
   let m = '';
   const c = word.charAt(i);
@@ -46,29 +77,18 @@ const mapCallback = (word, i, fromTo) => {
 };
 
 /**
- * @private
- * Aramaic mapper
+ * CAL to Sedra aramaic mapper
+ * @const
+ * @type { Mapper }
  */
-const mapper = new Mapper(
-  new Writing(
-    consonants,
-    commonVowels,
-    diacritics),
-  new Writing(
-    sedraConsonants,
-    sedraVowels,
-    sedraDiacritics),
-  mapCallback
-);
+export const mapper = new Mapper(calWriting, sedraWriting, mapCallback);
 
 /**
  * Convert from CAL to Sedra 3 transliteration
  * @param {string} word input word in CAL code transliteration
  * @returns {string} the input word converted to Sedra 3 representation
  */
-export function toSedra(word) {
-  return mapper.map(word);
-}
+export const toSedra = word => mapper.map(word);
 
 /**
  * CAL to Sedra map
@@ -110,6 +130,9 @@ export const toSedraMap = Object.freeze(
     r: { value: 'R', enumerable: true },
     $: { value: 'W', enumerable: true },
     t: { value: 'T', enumerable: true },
+
+    P: { value: 'I', enumerable: true }, // Palestinian p
+    '&': { value: 'S', enumerable: true }, // Hebrew Sin
 
     E: { value: 'e', enumerable: true }, // Eastern short E => Western e
     O: { value: 'o', enumerable: true } // Eastern O => Western o(w)

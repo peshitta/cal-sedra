@@ -47,6 +47,22 @@ describe('CAL', () => {
       test.strictEqual(word, wordExpected, 'toSedra_wO consonant');
       test.strictEqual(vocalised, vocalisedExpected, 'toSedra_wO vocalised');
     });
+    it('Word with Palestinian P => I mapping', () => {
+      const word = sut.toSedra('P)bhwhy');
+      const vocalised = sut.toSedra('Pe)ab,ohawh_y');
+      const wordExpected = 'IABHOH;';
+      const vocalisedExpected = 'IeAaB,oHaOH_;';
+      test.strictEqual(word, wordExpected, 'toSedra_P consonant');
+      test.strictEqual(vocalised, vocalisedExpected, 'toSedra_P vocalised');
+    });
+    it('Word with Hebrew Sin (&) => S mapping', () => {
+      const word = sut.toSedra('&)bhwhy');
+      const vocalised = sut.toSedra('&e)ab,ohawh_y');
+      const wordExpected = 'SABHOH;';
+      const vocalisedExpected = 'SeAaB,oHaOH_;';
+      test.strictEqual(word, wordExpected, 'toSedra_P consonant');
+      test.strictEqual(vocalised, vocalisedExpected, 'toSedra_P vocalised');
+    });
     it('Blank word returns blank', () => {
       const word = sut.toSedra('');
       const wordExpected = '';
@@ -66,6 +82,41 @@ describe('CAL', () => {
       const word = sut.toSedra(0);
       const wordExpected = 0;
       test.strictEqual(word, wordExpected, 'toSedra_zero');
+    });
+  });
+  describe('Mapped writing', () => {
+    it('Consonants length', () => {
+      test.strictEqual(
+        sut.mapper.fromWriting.consonants.length,
+        sut.mapper.toWriting.consonants.length,
+        'Length differs'
+      );
+      test.ok(
+        sut.mapper.fromWriting.consonants.length === 24,
+        'Length greater than 24'
+      );
+    });
+    it('Vowels length', () => {
+      test.strictEqual(
+        sut.mapper.fromWriting.vowels.length,
+        sut.mapper.toWriting.vowels.length,
+        'Length differs'
+      );
+      test.ok(
+        sut.mapper.fromWriting.vowels.length === 5,
+        'Length equal to 5'
+      );
+    });
+    it('Diacritics length', () => {
+      test.strictEqual(
+        sut.mapper.fromWriting.diacritics.length,
+        sut.mapper.toWriting.diacritics.length,
+        'Length differs'
+      );
+      test.ok(
+        (sut.mapper.fromWriting.diacritics.length === 4),
+        'Length equal to 4'
+      );
     });
   });
 });

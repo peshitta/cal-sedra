@@ -1,6 +1,6 @@
 {
   "name": "cal-sedra",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert from CAL code to Sedra 3 ASCII transliteration",
   "main": "build/cal-sedra.js",
   "main݂Min": "build/cal-sedra.min.js",
@@ -28,7 +28,7 @@
     }
   },
   "files": [
-    "build"
+    "build/*.js"
   ],
   "engines": {
     "node": ">=6.0.0"
@@ -58,8 +58,8 @@
   },
   "homepage": "https://github.com/peshitta/cal-sedra#readme",
   "dependencies": {
-    "aramaic-mapper": "^1.0.1",
-    "cal-code-util": "^1.0.3",
+    "aramaic-mapper": "^1.0.2",
+    "cal-code-util": "^1.0.5",
     "sedra-code-util": "^1.0.2"
   },
   "devDependencies": {
@@ -68,13 +68,13 @@
     "babel-register": "^6.26.0",
     "babelrc-rollup": "^3.0.0",
     "coveralls": "^2.13.1",
-    "eslint": "^4.6.1",
+    "eslint": "^4.7.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.5.0",
-    "rollup": "^0.49.3",
+    "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-istanbul": "^1.1.0",
     "rollup-plugin-uglify": "^2.0.1"

@@ -24,7 +24,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.2.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.2.tgz)
+[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.3.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.3.tgz)
 
 ## More information
 
@@ -63,8 +63,27 @@ npm run build
 ## API Reference
 
 * [cal](#module_cal)
+    * [.mapper](#module_cal.mapper) : <code>Mapper</code>
+    * [.toSedra](#module_cal.toSedra) ⇒ <code>string</code>
     * [.toSedraMap](#module_cal.toSedraMap) : <code>Object.&lt;string, string&gt;</code>
-    * [.toSedra(word)](#module_cal.toSedra) ⇒ <code>string</code>
+
+<a name="module_cal.mapper"></a>
+
+### cal.mapper : <code>Mapper</code>
+CAL to Sedra aramaic mapper
+
+**Kind**: static constant of [<code>cal</code>](#module_cal)  
+<a name="module_cal.toSedra"></a>
+
+### cal.toSedra ⇒ <code>string</code>
+Convert from CAL to Sedra 3 transliteration
+
+**Kind**: static constant of [<code>cal</code>](#module_cal)  
+**Returns**: <code>string</code> - the input word converted to Sedra 3 representation  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| word | <code>string</code> | input word in CAL code transliteration |
 
 <a name="module_cal.toSedraMap"></a>
 
@@ -72,15 +91,3 @@ npm run build
 CAL to Sedra map
 
 **Kind**: static constant of [<code>cal</code>](#module_cal)  
-<a name="module_cal.toSedra"></a>
-
-### cal.toSedra(word) ⇒ <code>string</code>
-Convert from CAL to Sedra 3 transliteration
-
-**Kind**: static method of [<code>cal</code>](#module_cal)  
-**Returns**: <code>string</code> - the input word converted to Sedra 3 representation  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| word | <code>string</code> | input word in CAL code transliteration |
-
