@@ -1,6 +1,6 @@
 {
   "name": "cal-sedra",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert from CAL code to Sedra 3 ASCII transliteration",
   "main": "build/cal-sedra.js",
   "main݂Min": "build/cal-sedra.min.js",
@@ -58,7 +58,7 @@
   },
   "homepage": "https://github.com/peshitta/cal-sedra#readme",
   "dependencies": {
-    "aramaic-mapper": "^1.0.2",
+    "aramaic-mapper": "^1.0.3",
     "cal-code-util": "^1.0.5",
     "sedra-code-util": "^1.0.2"
   },

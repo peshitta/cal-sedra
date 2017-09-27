@@ -8,7 +8,7 @@ const isProduction = process.env.BUILD === 'production';
 const banner = isProduction
   ? '/**\n' +
     '* @file Convert from CAL code to Sedra 3 ASCII transliteration\n' +
-    '* @version 1.0.3\n' +
+    '* @version 1.0.4\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
