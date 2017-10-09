@@ -11,6 +11,7 @@
 Convert from CAL code to Sedra 3 ASCII transliteration
 
 ## Installation
+
 In order to use this library, [Node.js](https://nodejs.org) should be installed. 
 Then run:
 ```
@@ -24,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.4.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.4.tgz)
+[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.5.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.5.tgz)
 
 ## More information
 
@@ -62,32 +63,32 @@ npm run build
 
 ## API Reference
 
-* [cal](#module_cal)
-    * [.mapper](#module_cal.mapper) : <code>Mapper</code>
-    * [.toSedra](#module_cal.toSedra) ⇒ <code>string</code>
-    * [.toSedraMap](#module_cal.toSedraMap) : <code>Object.&lt;string, string&gt;</code>
+* [calSedra](#module_calSedra)
+    * [.mapper](#module_calSedra.mapper) : <code>Mapper</code>
+    * [.toSedra](#module_calSedra.toSedra) ⇒ <code>string</code>
+    * [.toSedraMap](#module_calSedra.toSedraMap) : <code>Object.&lt;string, string&gt;</code>
 
-<a name="module_cal.mapper"></a>
+<a name="module_calSedra.mapper"></a>
 
-### cal.mapper : <code>Mapper</code>
+### calSedra.mapper : <code>Mapper</code>
 CAL to Sedra aramaic mapper
 
-**Kind**: static constant of [<code>cal</code>](#module_cal)  
-<a name="module_cal.toSedra"></a>
+**Kind**: static constant of [<code>calSedra</code>](#module_calSedra)  
+<a name="module_calSedra.toSedra"></a>
 
-### cal.toSedra ⇒ <code>string</code>
+### calSedra.toSedra ⇒ <code>string</code>
 Convert from CAL to Sedra 3 transliteration
 
-**Kind**: static constant of [<code>cal</code>](#module_cal)  
+**Kind**: static constant of [<code>calSedra</code>](#module_calSedra)  
 **Returns**: <code>string</code> - the input word converted to Sedra 3 representation  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | word | <code>string</code> | input word in CAL code transliteration |
 
-<a name="module_cal.toSedraMap"></a>
+<a name="module_calSedra.toSedraMap"></a>
 
-### cal.toSedraMap : <code>Object.&lt;string, string&gt;</code>
+### calSedra.toSedraMap : <code>Object.&lt;string, string&gt;</code>
 CAL to Sedra map
 
-**Kind**: static constant of [<code>cal</code>](#module_cal)  
+**Kind**: static constant of [<code>calSedra</code>](#module_calSedra)  

@@ -1,5 +1,5 @@
-import * as test from 'assert';
-import * as sut from '../build/cal-sedra';
+const test = require('assert');
+const sut = require('../build/cal-sedra');
 
 describe('CAL', () => {
   describe('To Sedra', () => {
