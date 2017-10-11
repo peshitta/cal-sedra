@@ -23,6 +23,14 @@ describe('CAL', () => {
       test.strictEqual(word, wordExpected, 'toSedra_yi consonant');
       test.strictEqual(vocalised, vocalisedExpected, 'toSedra_yi vocalised');
     });
+    it('Word with (ye) => (e;) mapping', () => {
+      const word = sut.toSedra('byt');
+      const vocalised = sut.toSedra("b'yet,");
+      const wordExpected = 'B;T';
+      const vocalisedExpected = "B'e;T,";
+      test.strictEqual(word, wordExpected, 'toSedra_ye consonant');
+      test.strictEqual(vocalised, vocalisedExpected, 'toSedra_ye vocalised');
+    });
     it('Word with short Eastern (E) => (e) mapping', () => {
       const word = sut.toSedra(')wld');
       const vocalised = sut.toSedra(')awlEd');

@@ -59,7 +59,9 @@ const mapCallback = (word, i, fromTo) => {
       m =
         word.charAt(i + 1) === 'i'
           ? 'i;' // Sedra stores as (iy)
-          : map(c, fromTo);
+          : word.charAt(i + 1) === 'e'
+            ? 'e;' // Sedra stores as (ey)
+            : map(c, fromTo);
       break;
     case 'w':
       m =
