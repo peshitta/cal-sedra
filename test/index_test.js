@@ -63,6 +63,11 @@ describe('CAL', () => {
       test.strictEqual(word, wordExpected, 'toSedra_P consonant');
       test.strictEqual(vocalised, vocalisedExpected, 'toSedra_P vocalised');
     });
+    it('Word with O E', () => {
+      const word = sut.toSedra('P)ObhwhyE');
+      const wordExpected = 'IAuBHOH;e';
+      test.strictEqual(word, wordExpected, 'toSedra_OE');
+    });
     it('Word with Hebrew Sin (&) => S mapping', () => {
       const word = sut.toSedra('&)bhwhy');
       const vocalised = sut.toSedra('&e)ab,ohawh_y');
@@ -110,10 +115,7 @@ describe('CAL', () => {
         sut.mapper.toWriting.vowels.length,
         'Length differs'
       );
-      test.ok(
-        sut.mapper.fromWriting.vowels.length === 5,
-        'Length equal to 5'
-      );
+      test.ok(sut.mapper.fromWriting.vowels.length === 7, 'Length equal to 7');
     });
     it('Diacritics length', () => {
       test.strictEqual(
@@ -122,7 +124,7 @@ describe('CAL', () => {
         'Length differs'
       );
       test.ok(
-        (sut.mapper.fromWriting.diacritics.length === 4),
+        sut.mapper.fromWriting.diacritics.length === 4,
         'Length equal to 4'
       );
     });

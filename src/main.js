@@ -1,10 +1,6 @@
 /** @module calSedra */
 import { Writing, Mapper } from 'aramaic-mapper';
-import {
-  allConsonants as consonants,
-  commonVowels,
-  diacritics
-} from 'cal-code-util';
+import { allConsonants as consonants, vowels, diacritics } from 'cal-code-util';
 import {
   consonants as sedraConsonants,
   vowels as sedraVowels,
@@ -17,7 +13,7 @@ import {
  * @const
  * @type { Writing }
  */
-const calWriting = new Writing(consonants, commonVowels, diacritics);
+const calWriting = new Writing(consonants, vowels, diacritics);
 
 /**
  * @private
@@ -27,7 +23,7 @@ const calWriting = new Writing(consonants, commonVowels, diacritics);
  */
 const sedraWriting = new Writing(
   Object.freeze(sedraConsonants.concat(['I', 'S'])),
-  sedraVowels,
+  sedraVowels.concat('e', 'u'), // no short E in Western, it could map to i in some words though
   sedraDiacritics
 );
 
@@ -52,9 +48,6 @@ const mapCallback = (word, i, fromTo) => {
   let m = '';
   const c = word.charAt(i);
   switch (c) {
-    case 'E':
-      m = 'e'; // no short E in Western, it could map to i in some words though
-      break;
     case 'y':
       m =
         word.charAt(i + 1) === 'i'

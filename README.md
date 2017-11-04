@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.7.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.7.tgz)
+[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.8.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.8.tgz)
 
 ## More information
 
