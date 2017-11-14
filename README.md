@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/peshitta/cal-sedra.svg?branch=master)](https://travis-ci.org/peshitta/cal-sedra)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/peshitta/cal-sedra/blob/master/LICENSE)
 [![Dependency Status](https://david-dm.org/peshitta/cal-sedra.svg)](https://david-dm.org/peshitta/cal-sedra)
-[![devDependencies Status](https://david-dm.org/peshitta/cal-sedra/dev-status.svg)](https://david-dm.org/peshitta/cal-sedra?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/peshitta/cal-sedra/badge.svg?branch=master)](https://coveralls.io/github/peshitta/cal-sedra?branch=master)
+[![Gitter](https://badges.gitter.im/peshitta/peshitta.svg "Join the chat at https://gitter.im/peshitta/Lobby")](https://gitter.im/peshitta/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Convert from CAL code to Sedra 3 ASCII transliteration
 
@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.8.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.8.tgz)
+[https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.9.tgz](https://registry.npmjs.org/cal-sedra/-/cal-sedra-1.0.9.tgz)
 
 ## More information
 
@@ -50,7 +50,11 @@ You are welcomed to improve this implementation or provide feedback. Please
 feel free to [Fork](https://help.github.com/articles/fork-a-repo/), create a
 [Pull Request](https://help.github.com/articles/about-pull-requests/) or
 submit [Issues](https://github.com/peshitta/cal-sedra/issues).
-Thank you!
+
+To read quick updates about Peshitta app or post questions or feedback, follow
+[@peshittap](https://www.twitter.com/peshittap)
+at [![@peshittap](http://i.imgur.com/wWzX9uB.png "@peshittap")](https://www.twitter.com/peshittap)or
+[![Gitter](https://badges.gitter.im/peshitta/peshitta.svg "Join the chat at https://gitter.im/peshitta/Lobby")](https://gitter.im/peshitta/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Development
 
