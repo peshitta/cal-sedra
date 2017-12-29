@@ -1,6 +1,12 @@
 /** @module calSedra */
 import { Writing, Mapper } from 'aramaic-mapper';
-import { allConsonants as consonants, vowels, diacritics } from 'cal-code-util';
+import {
+  allConsonants as consonants,
+  vowels,
+  diacritics,
+  isVowel,
+  isBdwlPrefix
+} from 'cal-code-util';
 import {
   consonants as sedraConsonants,
   vowels as sedraVowels,
@@ -29,6 +35,26 @@ const sedraWriting = new Writing(
 
 /**
  * @private
+ * Return true Y|w+vowel is flipped a la Sedra
+ * @param { string } word word to test
+ * @param { number } index position in word to start checking from
+ * @returns { boolean } true if Y|w+vowel is flipped
+ */
+const isYwFlipped = (word, index) => {
+  if (index < 1) {
+    return false; // can't start word with a vowel
+  }
+  if (isVowel(word.charAt(index - 1))) {
+    return false; // can't follow vowel by vowel
+  }
+  if (word.charAt(index - 1) === ')') {
+    return index === 1 || isBdwlPrefix(word, index - 2); // initial Alap is followed by vowel
+  }
+  return true;
+};
+
+/**
+ * @private
  * Maps input character to Sedra char
  * @param { string } c input character
  * @param { Object.<string, string> } fromTo mapping dictionary
@@ -51,18 +77,16 @@ const mapCallback = (word, i, fromTo) => {
     case 'y':
       m =
         word.charAt(i + 1) === 'i'
-          ? 'i;' // Sedra stores as (iy)
+          ? isYwFlipped(word, i) ? 'i;' : ';i'
           : word.charAt(i + 1) === 'e'
-            ? 'e;' // Sedra stores as (ey)
+            ? isYwFlipped(word, i) ? 'e;' : ';e'
             : map(c, fromTo);
       break;
     case 'w':
       m =
         word.charAt(i + 1) === 'u'
-          ? 'uO' // Sedra stores as (uw)
-          : word.charAt(i + 1) === 'O'
-            ? 'oO' // Eastern O stored as (ow)
-            : map(c, fromTo);
+          ? isYwFlipped(word, i) ? 'uO' : 'Ou'
+          : word.charAt(i + 1) === 'O' ? 'oO' : map(c, fromTo);
       break;
     default:
       m = map(c, fromTo);
@@ -89,7 +113,7 @@ export const toSedra = word => mapper.map(word);
  * CAL to Sedra map
  * @constant
  * @type { Object.<string, string> }
-*/
+ */
 export const toSedraMap = Object.freeze(
   Object.create(null, {
     // Abgad

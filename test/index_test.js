@@ -55,6 +55,35 @@ describe('CAL', () => {
       test.strictEqual(word, wordExpected, 'toSedra_wO consonant');
       test.strictEqual(vocalised, vocalisedExpected, 'toSedra_wO vocalised');
     });
+    it('Words with no flipping on vowels', () => {
+      let vocalised = sut.toSedra('yisroyel');
+      let vocalisedExpected = ';iSRo;eL';
+      test.strictEqual(
+        vocalised,
+        vocalisedExpected,
+        'toSedra^yi vocalised beginning'
+      );
+
+      vocalised = sut.toSedra(')armo)yit,');
+      vocalisedExpected = 'AaRMoA;iT,';
+      test.strictEqual(
+        vocalised,
+        vocalisedExpected,
+        'toSedra^yi vocalised inside'
+      );
+
+      vocalised = sut.toSedra('xi)royyin');
+      vocalisedExpected = 'KiARo;i;N';
+      test.strictEqual(
+        vocalised,
+        vocalisedExpected,
+        'toSedra^yi vocalised inside'
+      );
+
+      vocalised = sut.toSedra(')armoye)');
+      vocalisedExpected = 'AaRMo;eA';
+      test.strictEqual(vocalised, vocalisedExpected, 'toSedra^ye vocalised');
+    });
     it('Word with Palestinian P => I mapping', () => {
       const word = sut.toSedra('P)bhwhy');
       const vocalised = sut.toSedra('Pe)ab,ohawh_y');
